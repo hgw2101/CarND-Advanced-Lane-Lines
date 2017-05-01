@@ -122,4 +122,6 @@ I had a lot of problems while implementing the sliding window technique to ident
 
 My implementation seems a bit slow, it only processes about 3 frames per second, which is way too slow in practice. I tried to speed it up by using the `find_lane_lines` method, as opposed to `fit_sliding_window` method, to plot polynomial lines, but did not see any noticeable increase in speed. There are probably redundancies in my code that were copying images that were not being used in the final result and they can be removed.
 
+My pipeline will likely fail if the image resolution is something other than 1280x720 since I statically configured many aspects of my pipeline, such as window sliding and perspective transform.
+
 I could improve my pipeline further by combining the Saturation color channel in the HLS color space and the Red color channel in the RGB color space. Saturation worked well alone, but Red color channel has been shown to work well with white lane lines, combining the two may make the pipeline more robust in different conditions.
